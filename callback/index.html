@@ -1,7 +1,17 @@
-<script>
-  const url = new URL(location.href);
-  const params = new URLSearchParams(url.search);
-  const code = params.get("code");
-  const link = `booknote://anpigon.github.io/notion_auth/callback?code=${code}`;
-  location.href = link;
-</script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const url = new URL(location.href);
+      const link = `intent://anpigon.github.io/notion_auth/callback${url.search}#Intent;scheme=booknote;end`;
+      const aLink = document.createElement("a");
+      aLink.href = link;
+      document.body.append(aLink);
+      aLink.click();
+      document.body.remove(aLink);
+    </script>
+  </body>
+</html>
