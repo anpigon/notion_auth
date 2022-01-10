@@ -6,13 +6,13 @@
   <body>
     <script>
       const url = new URL(location.href);
-      const link = `intent://anpigon.github.io/notion_auth/callback${url.search}#Intent;scheme=booknote;end`;
+      // const link = `intent://anpigon.github.io/notion_auth_callback${url.search}#Intent;scheme=booknote;end`;
+      const link = `booknote://anpigon.github.io/notion_auth_callback${url.search}`;
       const aLink = document.createElement("a");
       aLink.href = link;
-      aLink.innerText = "click";
       document.body.append(aLink);
       aLink.click();
-      // document.body.removeChild(aLink);
+      document.body.removeChild(aLink);
     </script>
   </body>
 </html>
